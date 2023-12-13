@@ -21,7 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   <!-- - [Install](#install) -->
-  - [Usage](#usage)
+  <!-- - [Usage](#usage) -->
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -40,6 +40,7 @@ The Blog app will be a classic example of a blog website. It is a fully function
 ### Tech Stack <a name="tech-stack"></a>
 
 <a href="https://www.ruby-lang.org/en/">Ruby</a>
+<a href="https://rubyonrails.org">Rails</a>
 
 <!-- Features -->
 
