@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
     expect(subject.errors[:name]).to include("can't be blank")
   end
 
-  context 'when using positive numbers' do
+  context '#posts_counter when using positive numbers' do
     let(:posts_counter) { 5 }
 
     before do
@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'when using negative numbers' do
+  context '#posts_counter when using negative numbers' do
     let(:posts_counter) { -50 }
 
     before do
@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'when using zero' do
+  context '#posts_counter when using zero' do
     let(:posts_counter) { 0 }
 
     before do
