@@ -5,9 +5,9 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  scope :last_five_comments, lambda { |post_id|
-    Comment.where(post_id:).order('comments.created_at DESC').limit(5)
-  }
+  def last_five_comments
+    comments.order('created_at DESC').limit(5)
+  end
 
   def update_posts_counter
     author.update(posts_counter: author.posts.count)
