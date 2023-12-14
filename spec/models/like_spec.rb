@@ -22,7 +22,7 @@ RSpec.describe Like, type: :model do
   end
 
   context '#update_likes_counter' do
-    it 'updates the posts counter when post is created' do
+    it 'updates the likes counter when a like is created' do
       expect(post.likes_counter).to eq(0)
 
       subject.save
