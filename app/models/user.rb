@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  scope :last_three_posts, lambda { |user_id|
-    Post.where(author_id: user_id).order('posts.created_at DESC').limit(3)
-  }
+  def last_three_posts
+    posts.order('created_at DESC').limit(3)
+  end
 end
