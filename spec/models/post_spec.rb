@@ -117,7 +117,6 @@ RSpec.describe Post, type: :model do
       expect(post.likes_counter).to eq(0)
 
       user.reload
-      post.reload
 
       expect(user.posts_counter).to eq(1)
     end
