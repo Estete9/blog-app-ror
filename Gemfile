@@ -68,3 +68,8 @@ end
 
 # rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# RSpec tests
+group :development, :test do
+  gem 'rspec-rails'
+end
