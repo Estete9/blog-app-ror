@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject { User.new(photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
 
-  it "validates presence of name" do
+  it 'validates presence of name' do
     subject.save
 
     expect(subject.errors[:name]).to include("can't be blank")
   end
 
-  context "when using positive numbers" do
+  context 'when using positive numbers' do
     let(:posts_counter) { 5 }
 
     before do
@@ -50,6 +50,4 @@ RSpec.describe User, type: :model do
       expect(subject.errors[:posts_counter]).to be_empty
     end
   end
-
-
 end
