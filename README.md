@@ -107,7 +107,7 @@ Contributions, issues, and feature requests are welcome!
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
-Feel free to check the [issues page UPDATE URL HERE](https://github.com/Estete9/vet-clinic-psql/issues).
+Feel free to check the [issues page UPDATE URL HERE](https://github.com/Estete9/blog-app-ror/issues).
 
 
 If you like this project remember to star and share it 🥳️
