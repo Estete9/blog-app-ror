@@ -1,0 +1,42 @@
+#user-page {
+  display: flex;
+  flex-direction: column;
+  padding: 5vw;
+  gap: 35px;
+}
+
+#user-data {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#bio-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#posts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.interaction-section {
+  text-align: end;
+  font-size: 0.8rem;
+  margin-top: -10px;
+}/*# sourceMappingURL=user-page.css.map */
