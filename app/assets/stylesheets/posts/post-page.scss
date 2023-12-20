@@ -3,4 +3,9 @@
   flex-direction: column;
   gap: 35px;
   padding: 5vw;
+
+  .post-details,
+  .comments-list {
+    padding: 5px;
+  }
 }
