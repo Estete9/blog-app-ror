@@ -15,9 +15,11 @@
   <article class='posts-section'>
     <ul id='posts-list'>
       <% @user.last_three_posts.each do |post| %>
-      <li class='post-item'>
-        <%= render partial: "shared/post_item", locals: { post: post } %>
-      </li>
+        <%= link_to user_posts_path(post.author_id) do %>
+          <li class='post-item'>
+            <%= render partial: "shared/post_item", locals: { post: post } %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
     <button>See all posts</button>
