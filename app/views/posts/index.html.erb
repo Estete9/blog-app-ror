@@ -2,43 +2,35 @@
   <section class='user-item'>
     <img src='https://picsum.photos/100', alt='user-avatar', class='user-avatar'/>
     <section class='user-info'>
-      <h2 class='user-name'>User Name</h2>
-      <p class='user-posts-counter'>Number of posts: X</p>
+      <h2 class='user-name'> <%= @user.name %> </h2>
+      <p class='user-posts-counter'>Number of posts: <%= @user.posts_counter %> </p>
     </section>
   </section>
   <article class="posts-section">
     <ul id='posts-list'>
-      <li class='post-item'>
-        <h3 class='post-number'>Post #1</h3>
-        <p class='post-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis augue nisl, ut tempus justo sodales non. Duis blandit imperdiet bibendum. Nulla aliquet ullamcorper eleifend. Cras vitae sem nisl. Nunc leo diam, tincidunt vel iaculis quis, dictum quis ligula. Donec mollis ultrices ante, et blandit velit tincidunt sit amet. Vestibulum maximus quis ante nec consequat.</p>
-          <p class='interaction-section'>Comments: X, Likes: Y</p>
-        <section class='comments-list'>
-          <ul id='comments-list'>
-            <li class='comment-item'> Username: Comment 1 </li>
-            <li class='comment-item'> Username: Comment 2 </li>
-            <li class='comment-item'> Username: Comment 3 </li>
-            <li class='comment-item'> Username: Comment 4 </li>
-            <li class='comment-item'> Username: Comment 5 </li>
-          </ul>
-        </section>
-      </li>
-      <li class='post-item'>
-        <h3 class='post-number'>Post #2</h3>
-        <p class='post-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis augue nisl, ut tempus justo sodales non. Duis blandit imperdiet bibendum. Nulla aliquet ullamcorper eleifend. Cras vitae sem nisl. Nunc leo diam, tincidunt vel iaculis quis, dictum quis ligula. Donec mollis ultrices ante, et blandit velit tincidunt sit amet. Vestibulum maximus quis ante nec consequat.</p>
-        <section class='interaction-section'>
-          <p>Comments: X, Likes: Y</p>
-        </section>
-        <section class='comments-list'>
-          <ul id='comments-list'>
-            <li class='comment-item'> Username: Comment 1 </li>
-            <li class='comment-item'> Username: Comment 2 </li>
-            <li class='comment-item'> Username: Comment 3 </li>
-            <li class='comment-item'> Username: Comment 4 </li>
-            <li class='comment-item'> Username: Comment 5 </li>
-          </ul>
-        </section>
-      </li>
+      <% @posts.each do |post| %>
+        <%= link_to user_post_path(post.author_id, post.id) do %>
+          <li class='post-item'>
+            <section class="post-header with-border">
+              <h3 class='post-number'> <%= post.title %> </h3>
+              <p class='post-content'> <%= post.text %> </p>
+              <p class='interaction-section'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+            </section>
+            <section class='comments-list with-border'>
+              <ul id='comments-list'>
+                <% if post.comments.any? %>
+                  <% post.last_five_comments.each do |comment| %>
+                    <li class='comment-item'> <%= @user.name %>: <%= comment.text %> </li>
+                  <% end %>
+                <% else %>
+                  <p>No comments yet.</p>
+                <% end %>
+              </ul>
+            </section>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
-    <button>Pagination</button>
+    <button class="btn">Pagination</button>
   </article>
 </article>

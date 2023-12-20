@@ -4,3 +4,8 @@
   gap: 35px;
   padding: 5vw;
 }
+
+#post-details-section .post-details,
+#post-details-section .comments-list {
+  padding: 5px;
+}
