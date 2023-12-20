@@ -1,37 +1,7 @@
 <ul id='users-list'>
+<% @users.each do |user| %>
   <li class='user-item'>
-  <img src='https://picsum.photos/100', alt='user-avatar', class='user-avatar'/>
-  <section class='user-info'>
-    <h2 class='user-name'>User Name</h2>
-    <p class='user-posts-counter'>Number of posts: X</p>
-  </section>
+    <%= render partial: 'user_item', locals: { user: user } %>
   </li>
-    <li class='user-item'>
-  <img src='https://picsum.photos/100', alt='user-avatar', class='user-avatar'/>
-  <section class='user-info'>
-    <h2 class='user-name'>User Name</h2>
-    <p class='user-posts-counter'>Number of posts: X</p>
-  </section>
-  </li>
-    <li class='user-item'>
-  <img src='https://picsum.photos/100', alt='user-avatar', class='user-avatar'/>
-  <section class='user-info'>
-    <h2 class='user-name'>User Name</h2>
-    <p class='user-posts-counter'>Number of posts: X</p>
-  </section>
-  </li>
-    <li class='user-item'>
-  <img src='https://picsum.photos/100', alt='user-avatar', class='user-avatar'/>
-  <section class='user-info'>
-    <h2 class='user-name'>User Name</h2>
-    <p class='user-posts-counter'>Number of posts: X</p>
-  </section>
-  </li>
-    <li class='user-item'>
-  <img src='https://picsum.photos/100', alt='user-avatar', class='user-avatar'/>
-  <section class='user-info'>
-    <h2 class='user-name'>User Name</h2>
-    <p class='user-posts-counter'>Number of posts: X</p>
-  </section>
-  </li>
+<% end %>
 </ul>
