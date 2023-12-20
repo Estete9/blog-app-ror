@@ -11,3 +11,7 @@
   text-decoration: none;
   color: black;
 }
+
+.with-border {
+  border: 2px solid black;
+}

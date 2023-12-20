@@ -33,7 +33,15 @@
 .post-item {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
+
+  * {
+    padding: 5px;
+  }
+
+  .with-border {
+    border: 2px solid black;
+  }
 }
 
 .interaction-section {
