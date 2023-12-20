@@ -19,7 +19,7 @@
             <section class='comments-list with-border'>
               <ul id='comments-list'>
                 <% if post.comments.any? %>
-                  <% post.comments.each do |comment| %>
+                  <% post.last_five_comments.each do |comment| %>
                     <li class='comment-item'> <%= @user.name %>: <%= comment.text %> </li>
                   <% end %>
                 <% else %>
