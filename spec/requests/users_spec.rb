@@ -1,12 +1,20 @@
 require 'rails_helper'
-
-RSpec.describe "Users", type: :request do
-  describe "GET /users" do
-    it "response has a status of 200" do
+RSpec.describe 'Users', type: :request do
+  describe 'GET /users/index' do
+    before do
       get users_path
-      expect(response).to have_http_status(200)
     end
 
-    # it 'response body contains '
+    it 'response is successful' do
+      expect(response).to be_successful
+    end
+
+    it 'response renders the correct page' do
+      expect(response.body).to render_template('index')
+    end
+
+    it 'contains the correct text in the body' do
+      expect(response.body).to include('User Name')
+    end
   end
 end
