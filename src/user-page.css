@@ -23,7 +23,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 .posts-section .btn {
   margin: 30px;
 }
@@ -41,15 +40,13 @@
   gap: 5px;
   padding: 5px;
 }
-
 .post-item .post-item > * {
   padding: 5px;
 }
-
 .post-item .with-border {
   border: 2px solid black;
 }
 
 .interaction-section {
   font-size: 0.8rem;
-}
+}/*# sourceMappingURL=user-page.css.map */
