@@ -10,6 +10,23 @@
   padding: 5px;
 }
 
+#posts-article #flash-messages {
+  width: 100%;
+}
+
+#posts-article #flash-messages .alert-danger {
+  background-color: darkorange;
+}
+
+#posts-article #flash-messages .alert-success {
+  background-color: darkseagreen;
+}
+
+#posts-article #flash-messages .alert {
+  color: white;
+  padding: 5px 10px;
+}
+
 .post-details-header {
   display: flex;
   justify-content: space-between;

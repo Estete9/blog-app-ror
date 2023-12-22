@@ -6,7 +6,22 @@
       <p class='user-posts-counter'>Number of posts: <%= @user.posts_counter %> </p>
     </section>
   </section>
-  <article id="new-post-form"><%= render partial: 'new_post_form' %></article>
+  <article id="new-post-form">
+    <div id="flash-messages">
+      <% if flash[:success].present? %>
+        <div class="alert alert-success">
+          <%= flash[:success] %>
+        </div>
+      <% end %>
+
+      <% if flash[:error].present? %>
+        <div class="alert alert-danger">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+    </div>
+    <%= render partial: 'new_post_form' %>\
+  </article>
   <article class="posts-section">
     <ul id='posts-list'>
       <% @posts.each do |post| %>
