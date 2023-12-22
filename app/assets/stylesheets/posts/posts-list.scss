@@ -4,6 +4,18 @@
   gap: 35px;
   padding: 5vw;
 
+  .post-header {
+    > div {
+      display: flex;
+    }
+
+    .like-btn {
+      height: 20px;
+      margin: 5px;
+      margin-left: auto;
+    }
+  }
+
   .post-header,
   .comments-list {
     padding: 5px;

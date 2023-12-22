@@ -5,6 +5,16 @@
   padding: 5vw;
 }
 
+#posts-article .post-header > div {
+  display: flex;
+}
+
+#posts-article .post-header .like-btn {
+  height: 20px;
+  margin: 5px;
+  margin-left: auto;
+}
+
 #posts-article .post-header,
 #posts-article .comments-list {
   padding: 5px;
