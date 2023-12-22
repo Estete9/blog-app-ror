@@ -1,7 +1,10 @@
-<%= form_with model:[@user, Post.new] do |form|  %>
-  <%= form.label :title, "Post's title" %>
-  <%= form.text_field :title %>
-  <%= form.label :text, "Post's content" %>
-  <%= form.text_area :text %>
-  <%= form.submit "Save post" %>
+<%= form_with(model:[@user, Post.new], html: { class: 'form post-form' }) do |form|  %>
+  <fieldset>
+    <legend class="form-legend">Write your post</legend>
+    <%= form.label :title, "Title", class: "form-label" %>
+    <%= form.text_field :title, class: "form-input form-text-input" %>
+    <%= form.label :text, "Content", class: "form-label" %>
+    <%= form.text_area :text, class: "form-input form-text-area" %>
+    <%= form.submit "Save post", class: "form-btn" %>
+  </fieldset>
 <% end %>

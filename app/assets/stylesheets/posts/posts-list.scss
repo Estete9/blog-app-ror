@@ -14,3 +14,39 @@
   display: flex;
   justify-content: space-between;
 }
+
+.form {
+  fieldset {
+    gap: 15px;
+    padding: 1vw 3vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-text-input {
+    padding: 10px;
+  }
+
+  .form-input {
+    border: 2px solid black;
+  }
+
+  .form-text-area {
+    height: 150px;
+    resize: none;
+  }
+
+  .form-legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-btn {
+    width: fit-content;
+    padding: 5px 10px;
+  }
+}

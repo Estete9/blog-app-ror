@@ -6,9 +6,8 @@
       <p class='user-posts-counter'>Number of posts: <%= @user.posts_counter %> </p>
     </section>
   </section>
+  <article id="new-post-form"><%= render partial: 'new_post_form' %></article>
   <article class="posts-section">
-  <section></section>
-  <%= render partial: 'new_post_form' %>
     <ul id='posts-list'>
       <% @posts.each do |post| %>
         <%= link_to user_post_path(post.author_id, post.id) do %>
