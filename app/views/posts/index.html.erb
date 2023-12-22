@@ -7,35 +7,27 @@
     </section>
   </section>
   <article id="new-post-form">
-    <div id="flash-messages">
-      <% if flash[:success].present? %>
-        <div class="alert alert-success">
-          <%= flash[:success] %>
-        </div>
-      <% end %>
-
-      <% if flash[:error].present? %>
-        <div class="alert alert-danger">
-          <%= flash[:error] %>
-        </div>
-      <% end %>
-    </div>
-    <%= render partial: 'shared/flash_msg' %>\
-    <%= render partial: 'new_post_form' %>\
+    <%= render partial: 'shared/flash_msg' %>
+    <%= render partial: 'new_post_form' %>
   </article>
   <article class="posts-section">
     <ul id='posts-list'>
       <% @posts.each do |post| %>
-        <%= link_to user_post_path(post.author_id, post.id) do %>
           <li class='post-item'>
-            <section class="post-header with-border">
-              <div>
-                <h3 class='post-title'> <%= post.title %> </h3>
-                <%= image_tag('like_icon.svg', alt: 'like button', class: "like-btn") %>
-              </div>
-              <p class='post-content'> <%= post.text %> </p>
-              <p class='interaction-section'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
-            </section>
+          <div>
+            <%= link_to user_post_path(post.author_id, post.id) do %>
+              <section class="post-header with-border">
+                <div>
+                  <h3 class='post-title'> <%= post.title %> </h3>
+                </div>
+                <p class='post-content'> <%= post.text %> </p>
+                <p class='interaction-section'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+              </section>
+            <% end %>
+        <%= link_to post_likes_path(post.id), data: { turbo_method: :post }, class: "like-anchor" do %>
+          <%= image_tag('like_icon.svg', alt: 'like button', class: "like-btn") %>
+        <% end %>
+          </div>
             <section class='comments-list with-border'>
               <ul id='comments-list'>
                 <% if post.comments.any? %>
@@ -48,7 +40,6 @@
               </ul>
             </section>
           </li>
-        <% end %>
       <% end %>
     </ul>
     <button class="btn">Pagination</button>

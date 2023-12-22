@@ -9,7 +9,7 @@
   display: flex;
 }
 
-#posts-article .post-header .like-btn {
+#posts-article .like-btn {
   height: 20px;
   margin: 5px;
   margin-left: auto;
