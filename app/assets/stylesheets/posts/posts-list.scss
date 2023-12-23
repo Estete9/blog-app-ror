@@ -4,13 +4,78 @@
   gap: 35px;
   padding: 5vw;
 
+  .post-header {
+    > div {
+      display: flex;
+    }
+  }
+
+  .like-btn {
+    height: 20px;
+    margin: 5px;
+    margin-left: auto;
+  }
+
   .post-header,
   .comments-list {
     padding: 5px;
+  }
+
+  #flash-messages {
+    width: 100%;
+
+    .alert-danger {
+      background-color: darkorange;
+    }
+
+    .alert-success {
+      background-color: darkseagreen;
+    }
+
+    .alert {
+      color: white;
+      padding: 5px 10px;
+    }
   }
 }
 
 .post-details-header {
   display: flex;
   justify-content: space-between;
+}
+
+.form {
+  fieldset {
+    gap: 15px;
+    padding: 1vw 3vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-text-input {
+    padding: 10px;
+  }
+
+  .form-input {
+    border: 2px solid black;
+  }
+
+  .form-text-area {
+    height: 150px;
+    resize: none;
+  }
+
+  .form-legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-btn {
+    width: fit-content;
+    padding: 5px 10px;
+  }
 }

@@ -5,12 +5,73 @@
   padding: 5vw;
 }
 
+#posts-article .post-header > div {
+  display: flex;
+}
+
+#posts-article .like-btn {
+  height: 20px;
+  margin: 5px;
+  margin-left: auto;
+}
+
 #posts-article .post-header,
 #posts-article .comments-list {
   padding: 5px;
 }
 
+#posts-article #flash-messages {
+  width: 100%;
+}
+
+#posts-article #flash-messages .alert-danger {
+  background-color: darkorange;
+}
+
+#posts-article #flash-messages .alert-success {
+  background-color: darkseagreen;
+}
+
+#posts-article #flash-messages .alert {
+  color: white;
+  padding: 5px 10px;
+}
+
 .post-details-header {
   display: flex;
   justify-content: space-between;
+}
+
+.form fieldset {
+  gap: 15px;
+  padding: 1vw 3vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.form .form-text-input {
+  padding: 10px;
+}
+
+.form .form-input {
+  border: 2px solid black;
+}
+
+.form .form-text-area {
+  height: 150px;
+  resize: none;
+}
+
+.form .form-legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form .form-label {
+  font-weight: bold;
+}
+
+.form .form-btn {
+  width: fit-content;
+  padding: 5px 10px;
 }

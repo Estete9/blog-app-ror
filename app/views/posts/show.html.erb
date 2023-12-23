@@ -2,7 +2,7 @@
   <section class='post-item'>
     <article class="post-details with-border">
       <section class="post-deetails-header">
-        <h3 class='post-number'> <%= @post.title%> by <%= @user.name %> </h3>
+        <h3 class='post-title'> <%= @post.title%> by <%= @user.name %> </h3>
         <p class='interaction-section'>Comments: <%= @post.comments_counter %> , Likes: <%= @post.likes_counter %> </p>
       </section>
       <p class='post-content'> <%= @post.text %> </p>
@@ -18,5 +18,7 @@
         <% end %>
       </ul>
     </section>
+      <%= render partial: 'shared/flash_msg' %>
+      <%= render partial: 'new_comment_form' %>
   </section>
 </article>

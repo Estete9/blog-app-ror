@@ -9,3 +9,20 @@
 #post-details-section .comments-list {
   padding: 5px;
 }
+
+#post-details-section #flash-messages {
+  width: 100%;
+}
+
+#post-details-section #flash-messages .alert-danger {
+  background-color: darkorange;
+}
+
+#post-details-section #flash-messages .alert-success {
+  background-color: darkseagreen;
+}
+
+#post-details-section #flash-messages .alert {
+  color: white;
+  padding: 5px 10px;
+}

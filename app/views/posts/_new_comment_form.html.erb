@@ -1,0 +1,8 @@
+<%= form_with(model:[@post, Comment.new], html: { class: 'form comment-form' }) do |form| %>
+  <fieldset>
+    <legend class="form-legend">Write your comment</legend>
+    <%= form.label :text, "Content", class: "form-label" %>
+    <%= form.text_area :text, class: "form-input form-text-area" %>
+    <%= form.submit "Save comment", class: "form-btn" %>
+  </fieldset>
+<% end %>
