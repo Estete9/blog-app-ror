@@ -17,11 +17,7 @@
             <div>
               <%= link_to user_post_path(post.author_id, post.id) do %>
                 <section class="post-header with-border">
-                  <div>
-                    <h3 class='post-title'> <%= post.title %> </h3>
-                  </div>
-                  <p class='post-content'> <%= post.text %> </p>
-                  <p class='interaction-section'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+                  <%= render partial:'shared/post_item', locals: {post: post } %>
                 </section>
               <% end %>
               <%= link_to post_likes_path(post.id), data: { turbo_method: :post }, class: "like-anchor" do %>
