@@ -14,20 +14,16 @@
     <ul id='posts-list'>
       <% @posts.each do |post| %>
           <li class='post-item'>
-          <div>
-            <%= link_to user_post_path(post.author_id, post.id) do %>
-              <section class="post-header with-border">
-                <div>
-                  <h3 class='post-title'> <%= post.title %> </h3>
-                </div>
-                <p class='post-content'> <%= post.text %> </p>
-                <p class='interaction-section'>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
-              </section>
-            <% end %>
-        <%= link_to post_likes_path(post.id), data: { turbo_method: :post }, class: "like-anchor" do %>
-          <%= image_tag('like_icon.svg', alt: 'like button', class: "like-btn") %>
-        <% end %>
-          </div>
+            <div>
+              <%= link_to user_post_path(post.author_id, post.id) do %>
+                <section class="post-header with-border">
+                  <%= render partial:'shared/post_item', locals: {post: post } %>
+                </section>
+              <% end %>
+              <%= link_to post_likes_path(post.id), data: { turbo_method: :post }, class: "like-anchor" do %>
+                <%= image_tag('like_icon.svg', alt: 'like button', class: "like-btn") %>
+              <% end %>
+            </div>
             <section class='comments-list with-border'>
               <ul id='comments-list'>
                 <% if post.comments.any? %>
