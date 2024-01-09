@@ -51,6 +51,11 @@ RSpec.feature "Posts", type: :feature do
     scenario 'I can see how many likes a post has' do
       expect(page).to have_content(@post1.likes_counter)
     end
-  end
 
+    scenario 'I can see a section for pagination if there are more posts than fit on the view' do
+      pagination_btn = find('button', text: 'Pagination', wait: 10)
+
+      expect(pagination_btn).to be_present
+    end
+  end
 end
