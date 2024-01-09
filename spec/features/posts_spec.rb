@@ -29,6 +29,10 @@ RSpec.feature "Posts", type: :feature do
     scenario 'I can see the number of posts the user has written' do
       expect(page).to have_content(@user1.posts_counter)
     end
+
+    scenario "I can see a post's title" do
+      expect(page). to have_content('first')
+    end
   end
 
 end
