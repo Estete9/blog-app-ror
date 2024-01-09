@@ -28,7 +28,7 @@
               <ul id='comments-list'>
                 <% if post.comments.any? %>
                   <% post.last_five_comments.each do |comment| %>
-                    <li class='comment-item'> <%= @user.name %>: <%= comment.text %> </li>
+                    <li class='comment-item'> <%= post.author.name %>: <%= comment.text %> </li>
                   <% end %>
                 <% else %>
                   <p>No comments yet.</p>

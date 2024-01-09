@@ -12,7 +12,7 @@
         <% if @post.comments.any? %>
           <% @post.comments.each do |comment| %>
             <li class='comment-item'> <%= @post.author.name %>: <%= comment.text %> </li>
-              <% end %>
+          <% end %>
         <% else %>
           <p>No comments yet.</p>
         <% end %>
