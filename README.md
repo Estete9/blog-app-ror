@@ -67,12 +67,16 @@ To run this project you need:
 ### Setup
 - run `ruby bin\rails db:create` to create the starting database
 - run `ruby bin\rails db:migrate` to update the database accordingly to the schema
-- create users and posts manually before rendering the page (so it doesn't appear empty)
+- Create users and posts manually (so it doesn't appear empty)
   - Run rails console `rails c`
   - Create users, posts, and if necessary, comments
-    - `User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)` 
-    - `Post.create(author: **your_new_user**, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)`
-    - OPTIONAL: `Comment.create(post: **your_new_post**, author: **your_new_user**, text: 'Hi Tom!' )`
+    - `user1 = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)` 
+    - `post1 = Post.create(author: **your_new_user**, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)`
+    - OPTIONAL: `comment1 = Comment.create(post: **your_new_post**, author: **your_new_user**, text: 'Hi Tom!' )`
+  - See the app in your local host
+    - Run the server with `rails server` or `rails s`
+    - Open your local server url in a browser
+      - Ex. `http://127.0.0.1:3000`
 
 <!-- AUTHORS -->
 
