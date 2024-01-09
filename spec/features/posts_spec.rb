@@ -96,5 +96,10 @@ RSpec.feature 'Posts', type: :feature do
         expect(page).to have_content(@post1.comments_counter)
       end
     end
+    scenario 'I can see how many likes it has' do
+      within('.post-details') do
+        expect(page).to have_content(@post1.likes_counter)
+      end
+    end
   end
 end
