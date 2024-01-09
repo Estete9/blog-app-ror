@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-require 'pry'
-
 RSpec.describe 'Posts', type: :request do
   let(:user_valid_attributes) do
     {

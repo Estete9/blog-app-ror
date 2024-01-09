@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-require 'pry'
-
 RSpec.feature 'Posts', type: :feature do
   context 'posts#index page' do
     let(:create_objects) do
