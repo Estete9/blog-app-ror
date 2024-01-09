@@ -80,7 +80,15 @@ RSpec.feature 'Posts', type: :feature do
     end
 
     scenario "I can see the post's title" do
-      expect(page).to have_content('first')
+      within('.post-deetails-header') do
+        expect(page).to have_content('first')
+      end
+    end
+
+    scenario 'I can see who wrote the post' do
+      within('.post-deetails-header') do
+        expect(page).to have_content('Tom')
+      end
     end
   end
 end
