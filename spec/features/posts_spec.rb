@@ -33,6 +33,10 @@ RSpec.feature "Posts", type: :feature do
     scenario "I can see a post's title" do
       expect(page). to have_content('first')
     end
+
+    scenario "I can see some of the post's body" do
+      expect(page). to have_content('first post')
+    end
   end
 
 end
