@@ -11,7 +11,6 @@ RSpec.describe 'Users', type: :request do
       }
     end
 
-
     before do
       @user = User.create! valid_attributes
       get users_path
@@ -55,8 +54,6 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'contains the correct text in the body' do
-
-
       expect(response.body).to include('Bio')
     end
   end
