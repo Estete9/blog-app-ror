@@ -15,7 +15,7 @@
   <article class='posts-section'>
     <ul id='posts-list'>
       <% @user.last_three_posts.each do |post| %>
-        <%= link_to user_posts_path(post.author_id) do %>
+        <%= link_to user_post_path(post.author_id, post.id) do %>
           <li class='post-item with-border'>
             <%= render partial: "shared/post_item", locals: { post: post } %>
           </li>
