@@ -43,6 +43,11 @@ RSpec.feature "Posts", type: :feature do
     scenario 'I can see the first comment on a post' do
       expect(page). to have_content("first! Hi, I'm Tom")
     end
+
+    scenario 'I can see how many comments a post has' do
+      expect(page). to have_content(@post1.comments_counter)
+
+    end
   end
 
 end
