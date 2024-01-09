@@ -25,4 +25,24 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_css("img[src*='#{user.photo}']")
     end
   end
+
+  scenario "displays a list with the users' posts counter" do
+    create_users
+
+    visit users_path
+
+    [@user1, @user2].each do |user|
+      expect(page).to have_content(user.posts_counter)
+    end
+  end  
+
+  scenario "displays a list with the users' bios" do
+    create_users
+
+    visit users_path
+
+    [@user1, @user2].each do |user|
+      expect(page).to have_content(user.bio)
+    end
+  end
 end
