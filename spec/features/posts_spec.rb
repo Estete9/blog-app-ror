@@ -57,5 +57,12 @@ RSpec.feature "Posts", type: :feature do
 
       expect(pagination_btn).to be_present
     end
+
+    scenario "When I click on a post, it redirects me to that post's show page" do
+      post_element = find('a', text: 'first')
+      post_element.click
+
+      expect(page).to have_current_path(user_post_path(@post1.author_id, @post1.id))
+    end
   end
 end
