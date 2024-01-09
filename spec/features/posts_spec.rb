@@ -101,5 +101,11 @@ RSpec.feature 'Posts', type: :feature do
         expect(page).to have_content(@post1.likes_counter)
       end
     end
+
+    scenario 'I can see the post body' do
+      within('.post-details') do
+        expect(page).to have_content(@post1.text)
+      end
+    end
   end
 end
