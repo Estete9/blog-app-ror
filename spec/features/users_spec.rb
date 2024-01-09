@@ -37,6 +37,16 @@ RSpec.feature 'Users', type: :feature do
         expect(page).to have_content(user.posts_counter)
       end
     end
+
+    scenario "When I click on a user, I am redirected to that user's show page" do
+      create_users
+
+      visit users_path
+      user_element = find('a', text: 'Tom')
+      user_element.click
+
+      expect(URI.parse(current_url).path).to eq(user_path(@user1.id))
+    end
   end
 
 
