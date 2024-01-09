@@ -72,7 +72,7 @@ To run this project you need:
   - Create users, posts, and if necessary, comments
     - `user1 = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)` 
     - `post1 = Post.create(author: **your_new_user**, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)`
-    - OPTIONAL: `comment1 = Comment.create(post: **your_new_post**, author: **your_new_user**, text: 'Hi Tom!' )`
+    - OPTIONAL: `comment1 = Comment.create(post: **your_new_post**, user: **your_new_user**, text: 'Hi Tom!' )`
   - See the app in your local host
     - Run the server with `rails server` or `rails s`
     - Open your local server url in a browser

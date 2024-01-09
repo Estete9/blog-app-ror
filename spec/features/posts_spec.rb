@@ -11,6 +11,8 @@ RSpec.feature "Posts", type: :feature do
       @post5 = Post.create(author: @user1, title: 'fifth', text: 'This is my fifth post', comments_counter: 0, likes_counter: 0)
       @post6 = Post.create(author: @user1, title: 'sixth', text: 'This is my sixth post', comments_counter: 0, likes_counter: 0)
       @post7 = Post.create(author: @user1, title: 'seventh', text: 'This is my seventh post', comments_counter: 0, likes_counter: 0)
+      @comment1 = Comment.create(post: @post1, user: @user1, text: 'first! Hi, I\'m Tom!' )
+      @comment2 = Comment.create(post: @post1, user: @user1, text: 'second! Hi I\'m also Tom!' )
     end
 
     before do
@@ -36,6 +38,10 @@ RSpec.feature "Posts", type: :feature do
 
     scenario "I can see some of the post's body" do
       expect(page). to have_content('first post')
+    end
+
+    scenario 'I can see the first comment on a post' do
+      expect(page). to have_content("first! Hi, I'm Tom")
     end
   end
 
