@@ -4,7 +4,7 @@ RSpec.feature "Posts", type: :feature do
   context "posts#index page" do
     let(:create_objects) do
       @user1 = User.create(name: 'Tom', photo: 'https://picsum.photos/100', bio: 'Teacher from Mexico.', posts_counter: 0)
-      @post1 = Post.create(author: @user1, title: 'first', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+      @post1 = Post.create(author: @user1, title: 'first', text: 'This is my first post', comments_counter: 0, likes_counter: 3)
       @post2 = Post.create(author: @user1, title: 'second', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
       @post3 = Post.create(author: @user1, title: 'third', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
       @post4 = Post.create(author: @user1, title: 'fourth', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
@@ -45,8 +45,11 @@ RSpec.feature "Posts", type: :feature do
     end
 
     scenario 'I can see how many comments a post has' do
-      expect(page). to have_content(@post1.comments_counter)
+      expect(page).to have_content(@post1.comments_counter)
+    end
 
+    scenario 'I can see how many likes a post has' do
+      expect(page).to have_content(@post1.likes_counter)
     end
   end
 
