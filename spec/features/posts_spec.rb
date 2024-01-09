@@ -26,6 +26,9 @@ RSpec.feature "Posts", type: :feature do
       expect(page).to have_content('Tom')
     end
 
+    scenario 'I can see the number of posts the user has written' do
+      expect(page).to have_content(@user1.posts_counter)
+    end
   end
 
 end
