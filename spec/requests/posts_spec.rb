@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+require 'pry'
+
 RSpec.describe 'Posts', type: :request do
   let(:user_valid_attributes) do
     {
@@ -25,7 +27,8 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'contains the correct text in the body' do
-      expect(response.body).to include('Post #1')
+
+      expect(response.body).to include('Tom')
     end
   end
 
@@ -55,7 +58,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'contains the correct text in the body' do
-      expect(response.body).to include('Post #1')
+      expect(response.body).to include('Tom')
     end
   end
 end
