@@ -21,6 +21,11 @@ RSpec.feature "Posts", type: :feature do
     scenario "I can see the user's profile picture" do
       expect(page).to have_css("img[src*='#{@user1.photo}']")
     end
+
+    scenario "I can see the user's username" do
+      expect(page).to have_content('Tom')
+    end
+
   end
 
 end
