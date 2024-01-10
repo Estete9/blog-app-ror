@@ -1,7 +1,18 @@
 require 'rails_helper'
+
 RSpec.describe 'Users', type: :request do
   describe 'GET /users/index' do
+    let(:valid_attributes) do
+      {
+        name: 'Tom',
+        photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+        bio: 'Teacher from Mexico.',
+        posts_counter: 0
+      }
+    end
+
     before do
+      @user = User.create! valid_attributes
       get users_path
     end
 
@@ -14,7 +25,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'contains the correct text in the body' do
-      expect(response.body).to include('User Name')
+      expect(response.body).to include('Tom')
     end
   end
 
