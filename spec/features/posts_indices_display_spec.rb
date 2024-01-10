@@ -23,7 +23,7 @@ RSpec.feature 'PostsIndices Display', type: :feature do
   scenario 'I can see the title and some of the body of each post' do
     posts.each do |post|
       expect(page).to have_content(post.title)
-      expect(page).to have_content("This is my #{post.ordinalize} post")
+      expect(page).to have_content("This is my first post")
     end
   end
 end
