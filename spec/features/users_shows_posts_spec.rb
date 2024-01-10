@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'UsersShowsPosts', type: :feature do
   context 'user posts' do
-    let(:user) { User.create(name: 'Tom', bio: 'Teacher from Mexico.') }
+    let(:user) { User.create(name: 'Tom', photo: 'https://picsum.photos/100', bio: 'Teacher from Mexico.', posts_counter: 0) }
     let!(:posts) do
       [
         Post.create(author: user, title: 'first', text: 'This is my first post', comments_counter: 0, likes_counter: 0),
