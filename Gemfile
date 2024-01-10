@@ -75,7 +75,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
   gem 'selenium-webdriver'
   # gem for testing controllers and requests
   gem 'rails-controller-testing'
