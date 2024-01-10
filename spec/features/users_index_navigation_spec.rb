@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.feature 'UsersIndices Navigation', type: :feature do
-  let!(:user1) { create(:user, name: 'Tom', bio: 'Teacher from Mexico.') }
-  let!(:user2) { create(:user, name: 'Lilly', bio: 'Teacher from USA.') }
-  let!(:post1) { create(:post, author: user1, title: 'Hello', text: 'This is my first post') }
+  let!(:user1) { User.create(name: 'Tom', photo: 'https://picsum.photos/100', bio: 'Teacher from Mexico.', posts_counter: 0) }
+  let!(:user2) { User.create(name: 'Lilly', photo: 'https://picsum.photos/100', bio: 'Teacher from USA.', posts_counter: 0) }
+  let!(:post1) { Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 3) }
 
   before { visit users_path }
 
