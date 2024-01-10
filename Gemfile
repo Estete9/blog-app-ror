@@ -85,3 +85,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # sass
 gem 'sassc-rails', '>= 2.0.1'
+
+gem "devise", "~> 4.9"
