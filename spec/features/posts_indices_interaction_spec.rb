@@ -3,10 +3,10 @@
 require 'rails_helper'
 
 RSpec.feature 'PostsIndices Interaction', type: :feature do
-  let!(:user1) { create(:user, name: 'Tom') }
-  let!(:post1) { create(:post, author: user1, title: 'first', text: 'This is my first post', likes_counter: 3) }
-  let!(:comment1) { create(:comment, post: post1, user: user1, text: 'first! Hi, I\'m Tom!') }
-  let!(:comment2) { create(:comment, post: post1, user: user1, text: 'second! Hi I\'m Tom!') }
+  let!(:user1) { User.create(name: 'Tom', photo: 'https://picsum.photos/100', bio: 'Teacher from Mexico.', posts_counter: 0) }
+  let!(:post1) { Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 3) }
+  let!(:comment1) { Comment.create(post: post1, user: user1, text: 'first! Hi, I\'m Tom!') }
+  let!(:comment2) { Comment.create(post: post1, user: user1, text: 'second! Hi I\'m also Tom!') }
 
   before { visit user_posts_path(user1.id) }
 
