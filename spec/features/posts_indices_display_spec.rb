@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature 'PostsIndices Display', type: :feature do
   let!(:user1) { User.create(name: 'Tom', photo: 'https://picsum.photos/100', bio: 'Teacher from Mexico.', posts_counter: 0) }
   let!(:posts) do
-    (1..7).map do |i|
+    (1..7).map do |_i|
       Post.create(author: user1, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 3)
     end
   end
@@ -23,7 +23,7 @@ RSpec.feature 'PostsIndices Display', type: :feature do
   scenario 'I can see the title and some of the body of each post' do
     posts.each do |post|
       expect(page).to have_content(post.title)
-      expect(page).to have_content("This is my first post")
+      expect(page).to have_content('This is my first post')
     end
   end
 end
