@@ -1,0 +1,16 @@
+<article class="log-in-article">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "username", placeholder: "Username" %>
+    </div>
+  
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+  
+</article>
