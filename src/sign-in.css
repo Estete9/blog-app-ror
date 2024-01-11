@@ -1,0 +1,29 @@
+.log-in-article {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-in-article .new_user {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.log-in-article input {
+  width: 60vw;
+  padding: 3px;
+}
+
+.log-in-article .field {
+  border: black solid 1px;
+}
+
+.log-in-article .actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
