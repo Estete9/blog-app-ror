@@ -6,13 +6,14 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    can :read [Post, Comment, Like]
+    can :read, [Post, Comment, Like]
 
     if user.is? :admin
-      can :manage [Post, Comment, Like]
+      can :manage, [Post, Comment, Like]
     else
-      can :read Post
-      can :destroy [Comment, Like]
+      can :create, [Comment, Like]
+      can :destroy, [Comment, Like], user_id: user.id
+
     end
   end
 end
