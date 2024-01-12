@@ -5,7 +5,5 @@ class UsersController < ApplicationController
     @users = User.order(:id)
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  def show;end
 end
