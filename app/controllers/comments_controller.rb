@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     end
     respond_to do |format|
       format.html { redirect_to user_post_path(@user.id, @post.id) }
-      format.json { render json: @comment, status: @comment.save ? :created : :unprocessable_entity }
+      # format.json here
     end
   end
 
