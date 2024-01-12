@@ -2,7 +2,14 @@
   <section class='post-item'>
     <article class="post-details with-border">
       <section class="post-deetails-header">
-        <h3 class='post-title'> <%= @post.title%> by <%= @user.name %> </h3>
+        <div class="post-title-and-delete">
+          <h3 class='post-title'> <%= @post.title%> by <%= @user.name %> </h3>
+            <% if can?(:destroy, @post) %>
+              <%= link_to user_post_path(@post.author_id, @post), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: "delete-comment-anchor" do %>
+                <%= image_tag('delete_icon.svg', alt: 'Delete Comment', class: "delete-comment-btn") %>
+              <% end %>
+            <% end %>
+        </div>
         <p class='interaction-section'>Comments: <%= @post.comments_counter %> , Likes: <%= @post.likes_counter %> </p>
       </section>
       <p class='post-content'> <%= @post.text %> </p>

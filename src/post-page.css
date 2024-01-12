@@ -14,6 +14,10 @@
   align-items: center;
   min-height: 36px;
 }
+#post-details-section .post-details .post-title-and-delete,
+#post-details-section .comments-list .post-title-and-delete {
+  display: flex;
+}
 #post-details-section .post-details .delete-comment-anchor,
 #post-details-section .comments-list .delete-comment-anchor {
   display: flex;
