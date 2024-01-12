@@ -14,7 +14,7 @@
             <li class='comment-item'> 
             <div class="comment-wrapper">
               <%= @post.author.name %>: <%= comment.text %> 
-              <%= link_to post_comments_path(@post, @comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <%= image_tag('delete_icon.svg', alt: 'Delete Comment') %>
               <% end %>
             </div>
