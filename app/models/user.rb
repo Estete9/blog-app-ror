@@ -12,10 +12,8 @@ class User < ApplicationRecord
 
   before_validation :set_default_posts_counter, on: :create
 
-  roles = [ :admin, :default ]
-
-  def is?( requested_role )
-    self.role == requested_role.to_s
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 
   def last_three_posts
