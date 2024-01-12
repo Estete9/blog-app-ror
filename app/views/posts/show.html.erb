@@ -13,7 +13,7 @@
           <% @post.comments.each do |comment| %>
             <li class='comment-item'> 
             <div class="comment-wrapper">
-              <%= @post.author.name %>: <%= comment.text %> 
+              <p><%= comment.user.name %>: <%= comment.text %> </p>
               <%= link_to post_comment_path(@post, comment), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: "delete-comment-anchor" do %>
                 <%= image_tag('delete_icon.svg', alt: 'Delete Comment', class: "delete-comment-btn") %>
               <% end %>

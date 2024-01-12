@@ -7,6 +7,20 @@
   .post-details,
   .comments-list {
     padding: 5px;
+
+    .comment-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .delete-comment-anchor {
+      margin-left: auto;
+    }
+
+    .delete-comment-btn {
+      height: 20px;
+      margin: 5px;
+    }
   }
 
   #flash-messages {
