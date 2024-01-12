@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @post = Post.new(post_params.merge(author: @user, comments_counter: 0, likes_counter: 0))
 
     if @post.save
@@ -19,6 +18,13 @@ class PostsController < ApplicationController
       flash[:error] = "An error occurred when saving your post: #{error_messages(@post)}"
     end
     redirect_to user_posts_path(@user.id)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    @post.update_posts_counter
+    redirect_to user_posts_path(@post.author_id), notice: 'Post deleted successfully'
   end
 
   private

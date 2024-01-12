@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   before_validation :set_default_posts_counter, on: :create
 
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
+
   def last_three_posts
     posts.order('created_at DESC').limit(3)
   end
