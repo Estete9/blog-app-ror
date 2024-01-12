@@ -12,10 +12,14 @@
 #post-details-section .comments-list .comment-wrapper {
   display: flex;
   align-items: center;
+  min-height: 36px;
 }
 #post-details-section .post-details .delete-comment-anchor,
 #post-details-section .comments-list .delete-comment-anchor {
+  display: flex;
+  align-items: center;
   margin-left: auto;
+  padding: 3px;
 }
 #post-details-section .post-details .delete-comment-btn,
 #post-details-section .comments-list .delete-comment-btn {

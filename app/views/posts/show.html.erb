@@ -14,8 +14,10 @@
             <li class='comment-item'> 
             <div class="comment-wrapper">
               <p><%= comment.user.name %>: <%= comment.text %> </p>
-              <%= link_to post_comment_path(@post, comment), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: "delete-comment-anchor" do %>
-                <%= image_tag('delete_icon.svg', alt: 'Delete Comment', class: "delete-comment-btn") %>
+              <% if can?(:destroy, comment) %>
+                <%= link_to post_comment_path(@post, comment), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: "delete-comment-anchor" do %>
+                  <%= image_tag('delete_icon.svg', alt: 'Delete Comment', class: "delete-comment-btn") %>
+                <% end %>
               <% end %>
             </div>
             </li>

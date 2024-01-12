@@ -11,10 +11,14 @@
     .comment-wrapper {
       display: flex;
       align-items: center;
+      min-height: 36px;
     }
 
     .delete-comment-anchor {
+      display: flex;
+      align-items: center;
       margin-left: auto;
+      padding: 3px;
     }
 
     .delete-comment-btn {
