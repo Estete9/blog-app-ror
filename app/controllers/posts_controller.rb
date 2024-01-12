@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => @posts }
+      format.json { render json: @posts }
     end
   end
 
@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     #   format.html
     #   format.json { render :json => {post: @post, comments: @comments} }
     # end
-
   end
 
   def create
