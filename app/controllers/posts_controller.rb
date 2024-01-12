@@ -12,6 +12,13 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:author, comments: [:user]).find(params[:id])
+    # @comments = @post.comments.includes(:user)
+
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render :json => {post: @post, comments: @comments} }
+    # end
+
   end
 
   def create
