@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
     render json: @comments
   end
-  
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params.merge(user: current_user))
