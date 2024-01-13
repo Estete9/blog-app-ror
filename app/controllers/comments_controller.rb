@@ -1,11 +1,4 @@
 class CommentsController < ApplicationController
-  def index
-    @post = Post.find(params[:post_id])
-    @comments = @post.comments.includes(:user)
-
-    render json: @comments
-  end
-
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params.merge(user: current_user))
@@ -15,11 +8,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = "An error occurred when saving your comment: #{error_messages(@comment)}"
     end
-
-    respond_to do |format|
-      format.html { redirect_to user_post_path(@user.id, @post.id) }
-      format.json { render json: @comment, status: @comment.save ? :created : :unprocessable_entity }
-    end
+    redirect_to user_post_path(@user.id, @post.id)
   end
 
   def destroy
@@ -32,7 +21,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :text)
+    params.require(:comment).permit(:text)
   end
 
   def error_messages(model)

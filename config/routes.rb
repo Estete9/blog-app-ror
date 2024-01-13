@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'comments/index'
-      get 'posts/user_posts'
+      resources :users, only: [] do
+        resources :posts, only: [:index]
+      end
+
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
     end
   end
+
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'
