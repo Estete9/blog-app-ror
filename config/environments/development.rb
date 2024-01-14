@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # default URL options for the Devise mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # enables Rswag to generate Swagger documentation based on your request specs
+  config.swagger_dry_run = false
 end

@@ -6,7 +6,9 @@ RSpec.describe 'Posts', type: :request do
       name: 'Tom',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
       bio: 'Teacher from Mexico.',
-      posts_counter: 0
+      posts_counter: 0,
+      email: 'test@email.com',
+      password: '123456'
     }
   end
 
@@ -42,7 +44,7 @@ RSpec.describe 'Posts', type: :request do
         title: 'hello',
         text: 'This is my first post',
         likes_counter: 0,
-        comments_counter: 0
+        comments_counter: 0,
       }
     end
 

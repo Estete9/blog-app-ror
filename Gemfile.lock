@@ -106,6 +106,12 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
+    database_cleaner (2.0.2)
+      database_cleaner-active_record (>= 2, < 3)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.3.4)
     debug (1.9.0)
       irb (~> 1.10)
@@ -120,6 +126,8 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     ffi (1.16.3-x64-mingw-ucrt)
     globalid (1.2.1)
@@ -138,6 +146,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    json-schema (4.1.1)
+      addressable (>= 2.8)
     jsonapi-renderer (0.2.2)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
@@ -254,6 +264,21 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rswag (2.13.0)
+      rswag-api (= 2.13.0)
+      rswag-specs (= 2.13.0)
+      rswag-ui (= 2.13.0)
+    rswag-api (2.13.0)
+      activesupport (>= 3.1, < 7.2)
+      railties (>= 3.1, < 7.2)
+    rswag-specs (2.13.0)
+      activesupport (>= 3.1, < 7.2)
+      json-schema (>= 2.2, < 5.0)
+      railties (>= 3.1, < 7.2)
+      rspec-core (>= 2.14)
+    rswag-ui (2.13.0)
+      actionpack (>= 3.1, < 7.2)
+      railties (>= 3.1, < 7.2)
     rubocop (1.57.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -333,8 +358,10 @@ DEPENDENCIES
   bootsnap
   cancancan
   capybara
+  database_cleaner
   debug
   devise (~> 4.9)
+  faker
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -343,6 +370,7 @@ DEPENDENCIES
   rails (~> 7.1.2)
   rails-controller-testing
   rspec-rails
+  rswag
   rubocop (>= 1.0, < 2.0)
   sassc-rails (>= 2.0.1)
   selenium-webdriver

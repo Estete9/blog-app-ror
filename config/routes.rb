@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-        sessions: 'users/sessions',
-        registrations: 'users/registrations'
-      }
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
   root to: 'users#index'
 
@@ -26,4 +26,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :index]
     resources :likes, only: [:create]
   end
+
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
 end
