@@ -95,7 +95,7 @@ To run this project you need:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- **GUI to show the data to users**
+- **API documentation with rswag**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
